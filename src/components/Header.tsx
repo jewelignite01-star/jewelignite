@@ -93,12 +93,13 @@ export function Header() {
           </button>
         </div>
       </div>
+    </header>
 
       {/* Mobile navigation */}
       {open && (
       <div
         id="mobile-nav"
-        className="fixed inset-0 top-0 z-50 flex flex-col bg-background lg:hidden"
+        className="fixed inset-0 top-0 z-[60] flex flex-col bg-background lg:hidden"
       >
         <div className="flex h-20 items-center justify-between px-5">
           <Logo className="h-11" />
@@ -116,6 +117,7 @@ export function Header() {
             <Link
               key={l.to}
               to={l.to}
+              onClick={() => setOpen(false)}
               className="border-b border-border/60 py-4 font-display text-2xl text-primary"
             >
               {l.label}
@@ -136,6 +138,6 @@ export function Header() {
         </nav>
       </div>
       )}
-    </header>
+    </>
   );
 }

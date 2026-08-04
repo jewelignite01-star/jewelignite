@@ -10,7 +10,7 @@ export function WhyJewelIgnite() {
       <SectionHead eyebrow="Why JewelIgnite" title="Little things, made properly." />
       <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
         {benefits.map((b, i) => {
-          const Icon = icons[i];
+          const Icon = icons[i] ?? HandHeart;
           return (
             <Reveal key={b.title} className="text-center lg:text-left">
               <div

@@ -134,6 +134,7 @@ export function Header() {
           </div>
         </nav>
       </div>
+      )}
     </header>
   );
 }

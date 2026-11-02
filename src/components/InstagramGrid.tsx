@@ -58,10 +58,10 @@ export function InstagramGrid() {
                 className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <figcaption className="absolute inset-0 flex flex-col justify-end bg-[color-mix(in_oklab,var(--ink)_55%,transparent)] p-4 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <span className="eyebrow !text-[color-mix(in_oklab,var(--blush)_85%,white)]">
+                <span className="eyebrow text-[color-mix(in_oklab,var(--blush)_85%,white)]!">
                   {post.label}
                 </span>
-                <span className="mt-1 font-display text-lg leading-snug text-white">
+                <span className="mt-1 font-display text-lg leading-snug text-primary-foreground">
                   {post.caption}
                 </span>
               </figcaption>

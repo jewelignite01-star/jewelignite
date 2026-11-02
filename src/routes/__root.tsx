@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorRouteComponent,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -111,7 +112,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
+  // The 1.170.x typings resolve this slot to a lazy component; runtime accepts a plain function component.
+  errorComponent: ErrorComponent as unknown as ErrorRouteComponent,
 });
 
 function RootShell({ children }: { children: ReactNode }) {

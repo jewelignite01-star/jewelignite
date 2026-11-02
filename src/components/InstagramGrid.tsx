@@ -1,13 +1,20 @@
-import { Instagram } from "lucide-react";
+import { Instagram, Sparkles } from "lucide-react";
 import { Section, SectionHead, Reveal } from "@/components/Section";
 import { BtnAnchor } from "@/components/Btn";
 import { brand } from "@/config/brand";
 import bts from "@/assets/instagram-bts.jpg";
-import packing from "@/assets/instagram-packing.jpg";
 import launch from "@/assets/instagram-launch.jpg";
 import studio from "@/assets/instagram-studio.jpg";
+import shootDay from "@/assets/instagram-shoot-day.png.asset.json";
+import packingOrders from "@/assets/instagram-packing-orders.png.asset.json";
 
 const posts = [
+  {
+    src: shootDay.url,
+    alt: "Behind the scenes — setting up the JewelIgnite shoot day with jewelry pieces on red satin",
+    label: "Shoot Day",
+    caption: "Setting the scene for a little photoshoot.",
+  },
   {
     src: bts,
     alt: "Behind the scenes — threading beads on a bracelet at the JewelIgnite desk",
@@ -15,10 +22,10 @@ const posts = [
     caption: "Bead by bead, this is where every piece begins.",
   },
   {
-    src: packing,
-    alt: "Packing a JewelIgnite order in a cream gift box with blush ribbon",
+    src: packingOrders.url,
+    alt: "Real JewelIgnite orders packed in kraft cards inside a box, ready to ship",
     label: "Packing Orders",
-    caption: "Every order leaves wrapped like a little gift.",
+    caption: "Pov: you found the prettiest beads jewellery.",
   },
   {
     src: launch,
@@ -40,9 +47,9 @@ export function InstagramGrid() {
       <SectionHead
         eyebrow="Instagram"
         title="Follow the Spark"
-        copy="Behind the scenes, packing days, new launches and little JewelIgnite moments."
+        copy="Behind the scenes, shoot days, packing orders, new launches and little JewelIgnite moments."
       />
-      <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {posts.map((post, i) => (
           <Reveal key={post.label}>
             <figure
@@ -68,6 +75,20 @@ export function InstagramGrid() {
             </figure>
           </Reveal>
         ))}
+        <Reveal>
+          <div
+            className="flex aspect-square flex-col items-center justify-center gap-3 rounded-md border border-[var(--blush)]/50 bg-card p-4 text-center"
+            style={{ transitionDelay: "300ms" }}
+          >
+            <Sparkles className="h-5 w-5 text-[var(--berry)]" aria-hidden="true" />
+            <p className="font-display text-xl leading-snug text-primary">
+              More spark on Instagram
+            </p>
+            <p className="text-[0.7rem] uppercase tracking-[0.16em] text-muted-foreground">
+              {brand.instagramHandle}
+            </p>
+          </div>
+        </Reveal>
       </div>
       <div className="mt-9 flex justify-center">
         {brand.instagramUrl ? (
